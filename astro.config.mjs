@@ -12,10 +12,28 @@ export default defineConfig({
         starlightThemeFlexoki(),
         starlightImageZoom()
       ],
-      title: '参界随笔',
+      title: 'My Docs',
       // 添加自定义组件配置
       components: {
-        Footer: './src/components/Footer.astro'
+        Footer: './src/components/Footer.astro',
+        Page: './src/components/Page.astro'
+      },
+      // 添加搜索配置
+      search: {
+        enabled: true,
+        translations: {
+          'zh': {
+            placeholder: '搜索文档...',
+            noResults: '没有找到结果',
+            resultsHeading: '搜索结果',
+            search: '搜索',
+            searching: '搜索中...',
+            searchResults: '搜索结果',
+            searchResultsFor: '搜索 "{query}" 的结果',
+            searchResultsWithCount: '找到 {count} 个结果',
+            searchResultsWithCountAndQuery: '找到 {count} 个 "{query}" 的结果',
+          }
+        }
       },
       sidebar: [
         {
