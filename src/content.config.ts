@@ -6,8 +6,8 @@ const baseSchema = docsSchema();
 const extendedSchema = {
 	...baseSchema,
 	author: z.string().optional(),
-	pubDate: z.string().transform((str) => new Date(str)).optional(),
-	updatedDate: z.string().transform((str) => new Date(str)).optional(),
+	pubDate: z.date().optional(),
+	updatedDate: z.date().optional(),
 };
 
 export const collections = {
