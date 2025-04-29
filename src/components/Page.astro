@@ -17,8 +17,8 @@ const { author, pubDate } = entry.data;
     {pubDate && (
       <div class="sl-page-date">
         <Icon name="calendar" />
-        <time datetime={pubDate}>
-          {new Date(pubDate).toLocaleDateString('zh-CN', {
+        <time datetime={pubDate.toISOString()}>
+          {pubDate.toLocaleDateString('zh-CN', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
