@@ -1,9 +1,0 @@
-import { StarlightPage as BaseStarlightPage } from '@astrojs/starlight/components'
-import Metadata from './Metadata.astro'
-
-const { author, pubDate, updatedDate } = Astro.locals.starlightRoute
-
-<BaseStarlightPage {...Astro.props}>
-  <Metadata {author} {pubDate} {updatedDate} />
-  <slot />
-</BaseStarlightPage> 
