@@ -1,6 +1,6 @@
 ---
 import { Icon } from '@astrojs/starlight/components';
-import Default from '@astrojs/starlight/components/Page.astro';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
 const { entry } = Astro.locals.starlightRoute;
 const metadata = entry?.data || {};
@@ -11,7 +11,7 @@ console.log('Author:', metadata.author);
 console.log('Publication date:', metadata.pubDate);
 ---
 
-<Default>
+<StarlightPage {...Astro.props}>
   {metadata.author || metadata.pubDate ? (
     <div class="sl-page-meta">
       {metadata.author && (
@@ -35,7 +35,7 @@ console.log('Publication date:', metadata.pubDate);
     </div>
   ) : null}
   <slot />
-</Default>
+</StarlightPage>
 
 <style>
   .sl-page-meta {
