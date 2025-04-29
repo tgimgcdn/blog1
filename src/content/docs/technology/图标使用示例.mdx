@@ -5,7 +5,7 @@ author: cmssky
 pubDate: 2024-04-29
 ---
 
-import { Icon } from '@astrojs/starlight/components';
+import { Icon, Tabs, TabItem } from '@astrojs/starlight/components';
 
 # 图标使用示例
 
@@ -51,45 +51,66 @@ import { Icon } from '@astrojs/starlight/components';
 
 ## 图标和文字对齐
 
-### 基本用法
+<Tabs>
+  <TabItem label="内联样式" icon="code">
+    ### 基本用法
 
-<span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-  <Icon name="star" /> 星星
-</span>
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+      <Icon name="star" /> 星星
+    </div>
 
-### 列表中的使用
+    ### 列表中的使用
 
-- <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-    <Icon name="check" /> 完成的任务
-  </span>
-- <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-    <Icon name="warning" /> 需要注意的事项
-  </span>
+    - <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="check" /> 完成的任务
+      </div>
+    - <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="warning" /> 需要注意的事项
+      </div>
 
-### 段落中的使用
+    ### 段落中的使用
 
-<p>
-  <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-    <Icon name="pencil" /> 编辑这篇文章
-  </span>
-</p>
+    <p>
+      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="pencil" /> 编辑这篇文章
+      </div>
+    </p>
 
-### 链接中的使用
+    ### 链接中的使用
 
-<a href="https://github.com" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-  <Icon name="github" /> GitHub
-</a>
+    <a href="https://github.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+      <Icon name="github" /> GitHub
+    </a>
+  </TabItem>
 
-### 使用自定义类
+  <TabItem label="使用 StarlightIcon 类型" icon="setting">
+    ### 基本用法
 
-<span class="icon-text">
-  <Icon name="star" /> 星星
-</span>
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+      <Icon name="star" /> 星星
+    </div>
 
-<style is:global>
-  .icon-text {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-</style>
+    ### 列表中的使用
+
+    - <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="check" /> 完成的任务
+      </div>
+    - <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="warning" /> 需要注意的事项
+      </div>
+
+    ### 段落中的使用
+
+    <p>
+      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Icon name="pencil" /> 编辑这篇文章
+      </div>
+    </p>
+
+    ### 链接中的使用
+
+    <a href="https://github.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+      <Icon name="github" /> GitHub
+    </a>
+  </TabItem>
+</Tabs>
