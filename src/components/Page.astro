@@ -1,52 +1,40 @@
 ---
 import { Icon } from '@astrojs/starlight/components';
-import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Page.astro';
 
-const { frontmatter } = Astro.props;
+const { entry } = Astro.locals.starlightRoute;
+const { author, pubDate } = entry.data;
 ---
 
-<div class="sl-page">
-  <div class="sl-page-header">
-    <h1 class="sl-page-title">{frontmatter.title}</h1>
-    {frontmatter.author && (
-      <div class="sl-page-meta">
-        <div class="sl-page-author">
-          <Icon name="user" />
-          <span>{frontmatter.author}</span>
-        </div>
-        {frontmatter.pubDate && (
-          <div class="sl-page-date">
-            <Icon name="calendar" />
-            <time datetime={frontmatter.pubDate}>
-              {new Date(frontmatter.pubDate).toLocaleDateString('zh-CN', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </time>
-          </div>
-        )}
+<Default>
+  <div class="sl-page-meta">
+    {author && (
+      <div class="sl-page-author">
+        <Icon name="user" />
+        <span>{author}</span>
+      </div>
+    )}
+    {pubDate && (
+      <div class="sl-page-date">
+        <Icon name="calendar" />
+        <time datetime={pubDate}>
+          {new Date(pubDate).toLocaleDateString('zh-CN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </time>
       </div>
     )}
   </div>
   <slot />
-</div>
+</Default>
 
 <style>
-  .sl-page-header {
-    margin-bottom: 2rem;
-  }
-
-  .sl-page-title {
-    margin: 0;
-    font-size: 2.5rem;
-    line-height: 1.2;
-  }
-
   .sl-page-meta {
     display: flex;
     gap: 1.5rem;
-    margin-top: 1rem;
+    margin: 1rem 0 2rem;
     color: var(--sl-color-gray-3);
     font-size: 0.9rem;
   }
