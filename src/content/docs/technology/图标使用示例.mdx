@@ -28,23 +28,68 @@ import { Icon } from '@astrojs/starlight/components';
 ## 在列表中使用
 
 - <Icon name="check" /> 完成的任务
-- <Icon name="warning" />需要注意的事项
+- <Icon name="warning" /> 需要注意的事项
 - <Icon name="info" /> 提示信息
 
 ## 在段落中使用
 
-<Icon name="pencil" />编辑这篇文章
+<Icon name="pencil" /> 编辑这篇文章
 
-<Icon name="clock" />发布于 2024-04-29
+<Icon name="clock" /> 发布于 2024-04-29
 
 ## 社交媒体链接
 
-- <Icon name="github" />[GitHub](https://github.com)
-- <Icon name="twitter" />[Twitter](https://twitter.com)
-- <Icon name="discord" />[Discord](https://discord.com)
+- <Icon name="github" /> [GitHub](https://github.com)
+- <Icon name="twitter" /> [Twitter](https://twitter.com)
+- <Icon name="discord" /> [Discord](https://discord.com)
 
 ## 技术栈图标
 
 - <Icon name="typescript" /> TypeScript
 - <Icon name="javascript" /> JavaScript
 - <Icon name="python" /> Python
+
+## 图标和文字对齐
+
+### 基本用法
+
+<span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+  <Icon name="star" /> 星星
+</span>
+
+### 列表中的使用
+
+- <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+    <Icon name="check" /> 完成的任务
+  </span>
+- <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+    <Icon name="warning" /> 需要注意的事项
+  </span>
+
+### 段落中的使用
+
+<p>
+  <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+    <Icon name="pencil" /> 编辑这篇文章
+  </span>
+</p>
+
+### 链接中的使用
+
+<a href="https://github.com" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+  <Icon name="github" /> GitHub
+</a>
+
+### 使用自定义类
+
+<span class="icon-text">
+  <Icon name="star" /> 星星
+</span>
+
+<style>
+  .icon-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+</style>
