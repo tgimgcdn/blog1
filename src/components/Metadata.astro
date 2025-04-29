@@ -1,13 +1,13 @@
-const { author, pubDate, updatedDate } = Astro.locals.starlightRoute
+const { author, pubDate, updatedDate } = Astro.locals.starlightRoute || {}
 
 <div class="metadata not-content">
   <div class="dates">
-    {pubDate && (
+    {pubDate && typeof pubDate === 'object' && (
       <time datetime={pubDate.toISOString()}>
         {pubDate.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
       </time>
     )}
-    {updatedDate && updatedDate.toISOString() !== pubDate?.toISOString() && (
+    {updatedDate && typeof updatedDate === 'object' && pubDate && typeof pubDate === 'object' && updatedDate.toISOString() !== pubDate.toISOString() && (
       <span class="update-date">
         更新于 <time datetime={updatedDate.toISOString()}>
           {updatedDate.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -15,7 +15,7 @@ const { author, pubDate, updatedDate } = Astro.locals.starlightRoute
       </span>
     )}
   </div>
-  {author && (
+  {author && typeof author === 'string' && (
     <div class="author">
       <div class="name">{author}</div>
     </div>
