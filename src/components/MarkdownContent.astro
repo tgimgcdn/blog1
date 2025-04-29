@@ -1,31 +1,12 @@
 ---
 import Default from '@astrojs/starlight/components/MarkdownContent.astro'
+import Metadata from './Metadata.astro'
 
 const { author, pubDate, updatedDate } = Astro.locals.starlightRoute
 ---
 
 <Default>
-  <div class="metadata not-content">
-    <div class="dates">
-      {pubDate && (
-        <time datetime={pubDate.toISOString()}>
-          {pubDate.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
-        </time>
-      )}
-      {updatedDate && updatedDate.toISOString() !== pubDate?.toISOString() && (
-        <span class="update-date">
-          更新于 <time datetime={updatedDate.toISOString()}>
-            {updatedDate.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
-          </time>
-        </span>
-      )}
-    </div>
-    {author && (
-      <div class="author">
-        <div class="name">{author}</div>
-      </div>
-    )}
-  </div>
+  <Metadata />
   <slot />
 </Default>
 
