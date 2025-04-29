@@ -3,35 +3,37 @@ import { Icon } from '@astrojs/starlight/components';
 import Default from '@astrojs/starlight/components/Page.astro';
 
 const { entry } = Astro.locals.starlightRoute;
-const { author, pubDate } = entry.data;
+const metadata = entry?.data || {};
 
 // Debug information
-console.log('Entry data:', entry.data);
-console.log('Author:', author);
-console.log('Publication date:', pubDate);
+console.log('Entry data:', metadata);
+console.log('Author:', metadata.author);
+console.log('Publication date:', metadata.pubDate);
 ---
 
 <Default>
-  <div class="sl-page-meta">
-    {author && (
-      <div class="sl-page-author">
-        <Icon name="user" />
-        <span>{author}</span>
-      </div>
-    )}
-    {pubDate && (
-      <div class="sl-page-date">
-        <Icon name="calendar" />
-        <time datetime={pubDate.toISOString()}>
-          {pubDate.toLocaleDateString('zh-CN', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })}
-        </time>
-      </div>
-    )}
-  </div>
+  {metadata.author || metadata.pubDate ? (
+    <div class="sl-page-meta">
+      {metadata.author && (
+        <div class="sl-page-author">
+          <Icon name="user" />
+          <span>{metadata.author}</span>
+        </div>
+      )}
+      {metadata.pubDate && (
+        <div class="sl-page-date">
+          <Icon name="calendar" />
+          <time datetime={metadata.pubDate.toISOString()}>
+            {metadata.pubDate.toLocaleDateString('zh-CN', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
+          </time>
+        </div>
+      )}
+    </div>
+  ) : null}
   <slot />
 </Default>
 
