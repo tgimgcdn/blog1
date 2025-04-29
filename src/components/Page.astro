@@ -4,6 +4,11 @@ import Default from '@astrojs/starlight/components/Page.astro';
 
 const { entry } = Astro.locals.starlightRoute;
 const { author, pubDate } = entry.data;
+
+// Debug information
+console.log('Entry data:', entry.data);
+console.log('Author:', author);
+console.log('Publication date:', pubDate);
 ---
 
 <Default>
