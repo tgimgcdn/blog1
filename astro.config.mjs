@@ -15,7 +15,8 @@ export default defineConfig({
       title: '参界随笔',
       components: {
         Footer: './src/components/Footer.astro',
-        StarlightPage: './src/components/StarlightPage.astro'
+        StarlightPage: './src/components/StarlightPage.astro',
+        MarkdownContent: './src/components/MarkdownContent.astro'
       },
       defaultLocale: 'zh',
       locales: {
