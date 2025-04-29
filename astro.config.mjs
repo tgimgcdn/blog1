@@ -12,7 +12,7 @@ export default defineConfig({
         starlightThemeFlexoki(),
         starlightImageZoom()
       ],
-      title: 'My Docs',
+      title: '参界随笔',
       // 添加自定义组件配置
       components: {
         Footer: './src/components/Footer.astro'
