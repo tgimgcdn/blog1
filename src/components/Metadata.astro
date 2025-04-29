@@ -1,54 +1,13 @@
-const route = Astro.locals.starlightRoute || {}
-const author = route.author
-const pubDate = route.pubDate
-const updatedDate = route.updatedDate
+---
+// Metadata component is temporarily disabled
+---
 
 <div class="metadata not-content">
-  <div class="dates">
-    {pubDate && (
-      <time datetime={pubDate}>
-        {new Date(pubDate).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
-      </time>
-    )}
-    {updatedDate && updatedDate !== pubDate && (
-      <span class="update-date">
-        更新于 <time datetime={updatedDate}>
-          {new Date(updatedDate).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
-        </time>
-      </span>
-    )}
-  </div>
-  {author && (
-    <div class="author">
-      <div class="name">{author}</div>
-    </div>
-  )}
+  <!-- Metadata display is temporarily disabled -->
 </div>
 
 <style>
   .metadata {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .dates {
-    font-size: var(--sl-text-sm);
-  }
-
-  .update-date {
-    color: var(--sl-color-gray-3);
-  }
-
-  .author {
-    display: flex;
-    gap: 0.5rem;
-    line-height: var(--sl-line-height-headings);
-  }
-
-  .name {
-    font-size: var(--sl-text-base);
-    font-weight: 600;
+    display: none;
   }
 </style> 
