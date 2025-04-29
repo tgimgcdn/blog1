@@ -12,9 +12,16 @@ export default defineConfig({
         starlightThemeFlexoki(),
         starlightImageZoom()
       ],
-      title: 'My Docs',
+      title: '参界随笔',
       components: {
         Footer: './src/components/Footer.astro'
+      },
+      defaultLocale: 'zh',
+      locales: {
+        root: {
+          label: '简体中文',
+          lang: 'zh'
+        }
       },
       sidebar: [
         {
