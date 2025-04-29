@@ -1,0 +1,66 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+import type { Props } from '@astrojs/starlight/props';
+
+const { frontmatter } = Astro.props;
+---
+
+<div class="sl-page">
+  <div class="sl-page-header">
+    <h1 class="sl-page-title">{frontmatter.title}</h1>
+    {frontmatter.author && (
+      <div class="sl-page-meta">
+        <div class="sl-page-author">
+          <Icon name="user" />
+          <span>{frontmatter.author}</span>
+        </div>
+        {frontmatter.pubDate && (
+          <div class="sl-page-date">
+            <Icon name="calendar" />
+            <time datetime={frontmatter.pubDate}>
+              {new Date(frontmatter.pubDate).toLocaleDateString('zh-CN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
+          </div>
+        )}
+      </div>
+    )}
+  </div>
+  <slot />
+</div>
+
+<style>
+  .sl-page-header {
+    margin-bottom: 2rem;
+  }
+
+  .sl-page-title {
+    margin: 0;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .sl-page-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    color: var(--sl-color-gray-3);
+    font-size: 0.9rem;
+  }
+
+  .sl-page-author,
+  .sl-page-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .sl-page-author :global(svg),
+  .sl-page-date :global(svg) {
+    width: 1rem;
+    height: 1rem;
+  }
+</style> 
