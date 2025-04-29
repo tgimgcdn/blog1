@@ -1,12 +1,6 @@
 import { Badge } from '@astrojs/starlight/components'
 
-interface Props {
-  author?: string
-  pubDate?: Date
-  updatedDate?: Date
-}
-
-const { author, pubDate, updatedDate } = Astro.props
+const { author, pubDate, updatedDate } = Astro.locals.starlightRoute
 
 <div class="metadata not-content">
   <div class="dates">
@@ -35,6 +29,7 @@ const { author, pubDate, updatedDate } = Astro.props
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .dates {
