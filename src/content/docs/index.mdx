@@ -27,12 +27,16 @@ const recentPosts = allPosts
   .slice(0, 6);
 
 // 获取所有分类
-const categories = new Set();
-allPosts.forEach(post => {
+const categories = [];
+for (const post of allPosts) {
   if (post.data.tags) {
-    post.data.tags.forEach(tag => categories.add(tag));
+    for (const tag of post.data.tags) {
+      if (!categories.includes(tag)) {
+        categories.push(tag);
+      }
+    }
   }
-});
+}
 
 ## 最新文章
 
@@ -59,7 +63,7 @@ allPosts.forEach(post => {
 ## 文章分类
 
 <CardGrid>
-  {Array.from(categories).map(category => (
+  {categories.map(category => (
     <Card title={category} href={`/tags/${category}`} icon="folder">
       查看所有 {category} 相关的文章
     </Card>
