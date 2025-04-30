@@ -5,7 +5,7 @@ description: 展示如何在 MDX 中使用 Starlight 图标
 
 import { Icon as StarlightIcon, Tabs, TabItem } from '@astrojs/starlight/components';
 
-<span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="pencil" /> Post by cmssky</span>
+<span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:pencil" /> Post by cmssky</span>
 
 <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:clock" /> pubDate 2024-04-29</span>
 ___
@@ -16,106 +16,106 @@ ___
 
 ## 基本图标
 
-这是一个星星图标：<StarlightIcon name="star" />
+这是一个星星图标：<StarlightIcon name="seti:star" />
 
-这是一个火箭图标：<StarlightIcon name="rocket" />
+这是一个火箭图标：<StarlightIcon name="seti:rocket" />
 
 ## 带标签的图标
 
-这是一个带标签的文档图标：<StarlightIcon name="document" label="文档" />
+这是一个带标签的文档图标：<StarlightIcon name="seti:document" label="文档" />
 
 ## 自定义样式
 
-这是一个金色的大星星：<StarlightIcon name="star" color="goldenrod" size="2rem" />
+这是一个金色的大星星：<StarlightIcon name="seti:star" color="goldenrod" size="2rem" />
 
-这是一个使用主题色的火箭：<StarlightIcon name="rocket" color="var(--sl-color-text-accent)" />
+这是一个使用主题色的火箭：<StarlightIcon name="seti:rocket" color="var(--sl-color-text-accent)" />
 
 ## 在列表中使用
 
-- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="check" /> 完成的任务</span>
-- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="warning" /> 需要注意的事项</span>
-- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="info" /> 提示信息</span>
+- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:check" /> 完成的任务</span>
+- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:warning" /> 需要注意的事项</span>
+- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:info" /> 提示信息</span>
 
 ## 在段落中使用
 
-<span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="pencil" /> 编辑这篇文章</span>
+<span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:pencil" /> 编辑这篇文章</span>
 
 <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:clock" /> 发布于 2024-04-29</span>
 
 ## 社交媒体链接
 
-- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="github" /> [GitHub](https://github.com)</span>
-- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="twitter" /> [Twitter](https://twitter.com)</span>
-- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="discord" /> [Discord](https://discord.com)</span>
+- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:github" /> [GitHub](https://github.com)</span>
+- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:twitter" /> [Twitter](https://twitter.com)</span>
+- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:discord" /> [Discord](https://discord.com)</span>
 
 ## 技术栈图标
 
-- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="typescript" /> TypeScript</span>
-- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="javascript" /> JavaScript</span>
-- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="python" /> Python</span>
+- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:typescript" /> TypeScript</span>
+- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:javascript" /> JavaScript</span>
+- <span style="display: inline-flex; align-items: center; gap: 0.5rem;"><StarlightIcon name="seti:python" /> Python</span>
 
 ## 图标和文字对齐
 
 <Tabs>
-  <TabItem label="内联样式" icon="code">
+  <TabItem label="内联样式" icon="seti:code">
     ### 基本用法
 
     <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <StarlightIcon name="star" /> 星星
+      <StarlightIcon name="seti:star" /> 星星
     </span>
 
     ### 列表中的使用
 
     - <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-        <StarlightIcon name="check" /> 完成的任务
+        <StarlightIcon name="seti:check" /> 完成的任务
       </span>
     - <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-        <StarlightIcon name="warning" /> 需要注意的事项
+        <StarlightIcon name="seti:warning" /> 需要注意的事项
       </span>
 
     ### 段落中的使用
 
     <p>
       <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-        <StarlightIcon name="pencil" /> 编辑这篇文章
+        <StarlightIcon name="seti:pencil" /> 编辑这篇文章
       </span>
     </p>
 
     ### 链接中的使用
 
     <a href="https://github.com" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <StarlightIcon name="github" /> GitHub
+      <StarlightIcon name="seti:github" /> GitHub
     </a>
   </TabItem>
 
-  <TabItem label="使用 StarlightIcon 类型" icon="setting">
+  <TabItem label="使用 StarlightIcon 类型" icon="seti:setting">
     ### 基本用法
 
     <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <StarlightIcon name="star" /> 星星
+      <StarlightIcon name="seti:star" /> 星星
     </span>
 
     ### 列表中的使用
 
     - <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-        <StarlightIcon name="check" /> 完成的任务
+        <StarlightIcon name="seti:check" /> 完成的任务
       </span>
     - <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-        <StarlightIcon name="warning" /> 需要注意的事项
+        <StarlightIcon name="seti:warning" /> 需要注意的事项
       </span>
 
     ### 段落中的使用
 
     <p>
       <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-        <StarlightIcon name="pencil" /> 编辑这篇文章
+        <StarlightIcon name="seti:pencil" /> 编辑这篇文章
       </span>
     </p>
 
     ### 链接中的使用
 
     <a href="https://github.com" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-      <StarlightIcon name="github" /> GitHub
+      <StarlightIcon name="seti:github" /> GitHub
     </a>
   </TabItem>
 </Tabs>
