@@ -55,12 +55,7 @@ export default defineConfig({
           ],
           translations: { 'zh': '项目' }
         }
-      ],
-      tags: {
-        show: true,
-        showCount: true,
-        showInSidebar: true
-      }
+      ]
     }),
   ],
 });
