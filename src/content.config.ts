@@ -2,9 +2,7 @@ import { defineCollection, z } from 'astro:content';
 import { docsLoader } from '@astrojs/starlight/loaders';
 import { docsSchema } from '@astrojs/starlight/schema';
 
-const baseSchema = docsSchema().extend({
-	tags: z.array(z.string()).optional()
-});
+const baseSchema = docsSchema();
 
 export const collections = {
 	docs: defineCollection({ 
